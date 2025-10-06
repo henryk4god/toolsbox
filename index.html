@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolerbox - Free AI Tools for SEO, Marketing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --success: #4cc9f0;
+            --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            --card-shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 40px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-url {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main content styles */
+        main {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        /* Tool card styles */
+        .tool-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--primary);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .tool-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .tool-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .tool-type {
+            display: inline-block;
+            background-color: var(--light-gray);
+            color: var(--gray);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .try-now {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+        }
+
+        .try-now:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(67, 97, 238, 0.4);
+        }
+
+        .try-now::after {
+            content: '→';
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .try-now:hover::after {
+            transform: translateX(4px);
+        }
+
+        .trending-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(to right, var(--accent), #b5179e);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(247, 37, 133, 0.3);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(to right, var(--success), #4895ef);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(76, 201, 240, 0.3);
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .feedback-link {
+            color: var(--success);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .feedback-link:hover {
+            color: white;
+        }
+
+        .feedback-link::before {
+            content: '💬';
+            margin-right: 8px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 30px 0;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tool-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Free AI Tools for SEO, Marketing</h1>
+            <p class="site-url">toolerbox.com</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="tools-section">
+            <h2 class="section-title">Most Popular</h2>
+            <div class="tools-grid" id="popular-tools">
+                <!-- Popular tools will be added here by JavaScript -->
+            </div>
+        </section>
+        
+        <section class="tools-section" style="margin-top: 60px;">
+            <h2 class="section-title">Trending</h2>
+            <div class="tools-grid" id="trending-tools">
+                <!-- Trending tools will be added here by JavaScript -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <a href="#" class="feedback-link">Feedback</a>
+        </div>
+    </footer>
+    
+    <script>
+        // Tool data
+        const tools = [
+            {
+                name: "Digital-Product-Ideas-Generator",
+                description: "Get Unique Digital Product Ideas",
+                type: "Products Tools",
+                trending: false,
+                popular: true,
+                url: "https://henryk4god.github.io/Digital-Product-Ideas-Generator/"
+            },
+            {
+                name: "Ancestral Freedom Prayer Generator",
+                description: "Receive personalized prayer points to break generational curses based on your family history",
+                type: "Prayer Tools",
+                trending: true,
+                popular: false,
+                url: "https://henryk4god.github.io/Ascestra-Prayer-Freedom-/"
+            },
+            {
+                name: "YouTube Transcripts",
+                description: "Download video transcripts for content repurposing and SEO",
+                type: "Media Tools",
+                trending: true,
+                popular: false,
+                url: "https://toolerbox.com/youtube-transcripts"
+            },
+            {
+                name: "Content Optimizer",
+                description: "AI-powered tool to optimize your content for better rankings",
+                type: "SEO Tools",
+                trending: true,
+                popular: true,
+                url: "https://toolerbox.com/content-optimizer"
+            },
+            {
+                name: "Backlink Analyzer",
+                description: "Analyze your backlink profile and discover new opportunities",
+                type: "SEO Tools",
+                trending: false,
+                popular: true,
+                url: "https://toolerbox.com/backlink-analyzer"
+            },
+            {
+                name: "Social Media Scheduler",
+                description: "Schedule and automate your social media posts",
+                type: "Media Tools",
+                trending: true,
+                popular: false,
+                url: "https://toolerbox.com/social-scheduler"
+            }
+        ];
+
+        // Function to create tool card
+        function createToolCard(tool) {
+            const card = document.createElement('div');
+            card.className = 'tool-card';
+            
+            // Add trending badge if applicable
+            if (tool.trending) {
+                const trendingBadge = document.createElement('div');
+                trendingBadge.className = 'trending-badge';
+                trendingBadge.textContent = 'Trending';
+                card.appendChild(trendingBadge);
+            }
+            
+            // Add popular badge if applicable
+            if (tool.popular && !tool.trending) {
+                const popularBadge = document.createElement('div');
+                popularBadge.className = 'popular-badge';
+                popularBadge.textContent = 'Popular';
+                card.appendChild(popularBadge);
+            }
+            
+            // Add tool name
+            const toolName = document.createElement('h3');
+            toolName.textContent = tool.name;
+            card.appendChild(toolName);
+            
+            // Add tool description
+            const toolDescription = document.createElement('p');
+            toolDescription.textContent = tool.description;
+            card.appendChild(toolDescription);
+            
+            // Add tool type
+            const toolType = document.createElement('div');
+            toolType.className = 'tool-type';
+            toolType.textContent = tool.type;
+            card.appendChild(toolType);
+            
+            // Add Try Now button
+            const tryNow = document.createElement('a');
+            tryNow.href = tool.url;
+            tryNow.className = 'try-now';
+            tryNow.textContent = 'Try Now';
+            card.appendChild(tryNow);
+            
+            // Make entire card clickable
+            card.addEventListener('click', function(e) {
+                // Don't trigger if the click was on the Try Now button
+                if (e.target !== tryNow) {
+                    window.location.href = tool.url;
+                }
+            });
+            
+            return card;
+        }
+
+        // Function to populate tools
+        function populateTools() {
+            const popularToolsGrid = document.getElementById('popular-tools');
+            const trendingToolsGrid = document.getElementById('trending-tools');
+            
+            // Filter popular tools
+            const popularTools = tools.filter(tool => tool.popular);
+            
+            // Add popular tools to the grid
+            popularTools.forEach(tool => {
+                const toolCard = createToolCard(tool);
+                popularToolsGrid.appendChild(toolCard);
+            });
+            
+            // Filter trending tools
+            const trendingTools = tools.filter(tool => tool.trending);
+            
+            // Add trending tools to the grid
+            trendingTools.forEach(tool => {
+                const toolCard = createToolCard(tool);
+                trendingToolsGrid.appendChild(toolCard);
+            });
+        }
+
+        // Initialize the page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            populateTools();
+        });
+    </script>
+</body>
+</html>

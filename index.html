@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toolerbox - Free AI Tools for SEO, Marketing</title>
+    <title>DMLabsbot - Pro AI Tool kits for Content and Digital Marketing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -183,32 +183,6 @@
             transform: translateX(4px);
         }
 
-        .trending-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(to right, var(--accent), #b5179e);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            box-shadow: 0 4px 8px rgba(247, 37, 133, 0.3);
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(to right, var(--success), #4895ef);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            box-shadow: 0 4px 8px rgba(76, 201, 240, 0.3);
-        }
-
         /* Footer styles */
         footer {
             background-color: var(--dark);
@@ -269,23 +243,30 @@
 <body>
     <header>
         <div class="container">
-            <h1>Free AI Tools for SEO, Marketing</h1>
-            <p class="site-url">toolerbox.com</p>
+            <h1>Pro AI Tool kits for Content and Digital Marketing</h1>
+            <p class="site-url">DMLabsbot</p>
         </div>
     </header>
     
     <main class="container">
         <section class="tools-section">
-            <h2 class="section-title">Most Popular</h2>
-            <div class="tools-grid" id="popular-tools">
-                <!-- Popular tools will be added here by JavaScript -->
+            <h2 class="section-title">AI Content & Social Media Tools</h2>
+            <div class="tools-grid" id="content-tools">
+                <!-- Content tools will be added here by JavaScript -->
             </div>
         </section>
         
         <section class="tools-section" style="margin-top: 60px;">
-            <h2 class="section-title">Trending</h2>
-            <div class="tools-grid" id="trending-tools">
-                <!-- Trending tools will be added here by JavaScript -->
+            <h2 class="section-title">Product & Business Tools</h2>
+            <div class="tools-grid" id="product-tools">
+                <!-- Product tools will be added here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="tools-section" style="margin-top: 60px;">
+            <h2 class="section-title">Training & Resources</h2>
+            <div class="tools-grid" id="training-tools">
+                <!-- Training tools will be added here by JavaScript -->
             </div>
         </section>
     </main>
@@ -300,52 +281,58 @@
         // Tool data
         const tools = [
             {
-                name: "Digital-Product-Ideas-Generator",
-                description: "Get Unique Digital Product Ideas",
-                type: "Products Tools",
-                trending: false,
-                popular: true,
+                name: "Answer To Your Ask Questions",
+                description: "Get best content to post all social media",
+                type: "All Social Media Content Generator Tool",
+                url: "https://michyritebiz.systeme.io/smpe"
+            },
+            {
+                name: "AI Post Generator",
+                description: "Enter a content idea and optional story — get 5 ready-to-use social media posts",
+                type: "Unique Content Generator Tool",
+                url: "https://michyritebiz.systeme.io/smpost"
+            },
+            {
+                name: "Most Asked Questions",
+                description: "Discover trending questions with proven market demand and scalable product ideas",
+                type: "Problem Finder Tool",
+                url: "https://michyritebiz.systeme.io/maq"
+            },
+            {
+                name: "Know Your Idea Custom",
+                description: "Enter a website URL to discover the perfect customer profile",
+                type: "Know Your Idea Customer Tool",
+                url: "https://michyritebiz.systeme.io/ta"
+            },
+            {
+                name: "Digital Products Ideas Finder",
+                description: "Get best digital Products Ideas for all hot niches",
+                type: "Product Finder Tool",
                 url: "https://henryk4god.github.io/Digital-Product-Ideas-Generator/"
             },
             {
-                name: "Ancestral Freedom Prayer Generator",
-                description: "Receive personalized prayer points to break generational curses based on your family history",
-                type: "Prayer Tools",
-                trending: true,
-                popular: false,
-                url: "https://henryk4god.github.io/Ascestra-Prayer-Freedom-/"
+                name: "Unique Products Ideas",
+                description: "Mix your expertise with trending questions to generate innovative digital products",
+                type: "Your own unique Products Maker",
+                url: "https://michyritebiz.systeme.io/mix"
             },
             {
-                name: "YouTube Transcripts",
-                description: "Download video transcripts for content repurposing and SEO",
-                type: "Media Tools",
-                trending: true,
-                popular: false,
-                url: "https://selar.com/gm4b"
+                name: "Digital Products Builder",
+                description: "Step by step guide to build course from starting to end",
+                type: "Course Developer Guide Tool",
+                url: "#" // Placeholder since URL was incomplete
             },
             {
-                name: "Content Optimizer",
-                description: "AI-powered tool to optimize your content for better rankings",
-                type: "SEO Tools",
-                trending: true,
-                popular: true,
-                url: "https://toolerbox.com/content-optimizer"
+                name: "Professional Prompt",
+                description: "Powerful prompt to employ and get results",
+                type: "Ebook",
+                url: "#" // Placeholder since URL was incomplete
             },
             {
-                name: "Backlink Analyzer",
-                description: "Analyze your backlink profile and discover new opportunities",
-                type: "SEO Tools",
-                trending: false,
-                popular: true,
-                url: "https://sandbox.flutterwave.com/pay/kgwjorewguvz"
-            },
-            {
-                name: "Social Media Scheduler",
-                description: "Schedule and automate your social media posts",
-                type: "Media Tools",
-                trending: true,
-                popular: false,
-                url: "https://toolerbox.com/social-scheduler"
+                name: "Upgrade Course",
+                description: "Join our promaster class to learn how bot kit like pro",
+                type: "Training",
+                url: "https://henryk4god.github.io/Upgrade-/"
             }
         ];
 
@@ -353,22 +340,6 @@
         function createToolCard(tool) {
             const card = document.createElement('div');
             card.className = 'tool-card';
-            
-            // Add trending badge if applicable
-            if (tool.trending) {
-                const trendingBadge = document.createElement('div');
-                trendingBadge.className = 'trending-badge';
-                trendingBadge.textContent = 'Trending';
-                card.appendChild(trendingBadge);
-            }
-            
-            // Add popular badge if applicable
-            if (tool.popular && !tool.trending) {
-                const popularBadge = document.createElement('div');
-                popularBadge.className = 'popular-badge';
-                popularBadge.textContent = 'Popular';
-                card.appendChild(popularBadge);
-            }
             
             // Add tool name
             const toolName = document.createElement('h3');
@@ -396,7 +367,7 @@
             // Make entire card clickable
             card.addEventListener('click', function(e) {
                 // Don't trigger if the click was on the Try Now button
-                if (e.target !== tryNow) {
+                if (e.target !== tryNow && tool.url !== "#") {
                     window.location.href = tool.url;
                 }
             });
@@ -406,25 +377,29 @@
 
         // Function to populate tools
         function populateTools() {
-            const popularToolsGrid = document.getElementById('popular-tools');
-            const trendingToolsGrid = document.getElementById('trending-tools');
+            const contentToolsGrid = document.getElementById('content-tools');
+            const productToolsGrid = document.getElementById('product-tools');
+            const trainingToolsGrid = document.getElementById('training-tools');
             
-            // Filter popular tools
-            const popularTools = tools.filter(tool => tool.popular);
-            
-            // Add popular tools to the grid
-            popularTools.forEach(tool => {
+            // Content tools (first 3)
+            const contentTools = tools.slice(0, 3);
+            contentTools.forEach(tool => {
                 const toolCard = createToolCard(tool);
-                popularToolsGrid.appendChild(toolCard);
+                contentToolsGrid.appendChild(toolCard);
             });
             
-            // Filter trending tools
-            const trendingTools = tools.filter(tool => tool.trending);
-            
-            // Add trending tools to the grid
-            trendingTools.forEach(tool => {
+            // Product tools (next 3)
+            const productTools = tools.slice(3, 6);
+            productTools.forEach(tool => {
                 const toolCard = createToolCard(tool);
-                trendingToolsGrid.appendChild(toolCard);
+                productToolsGrid.appendChild(toolCard);
+            });
+            
+            // Training tools (last 3)
+            const trainingTools = tools.slice(6);
+            trainingTools.forEach(tool => {
+                const toolCard = createToolCard(tool);
+                trainingToolsGrid.appendChild(toolCard);
             });
         }
 
